@@ -33,5 +33,6 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+    allowedHosts: ["light-hats-switch.loca.lt"],
   },
 });

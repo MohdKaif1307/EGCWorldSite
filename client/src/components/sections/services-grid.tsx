@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Reveal } from '@/components/ui/reveal';
 import { Button } from '@/components/ui/button';
 import { TrendingUp, GraduationCap, Shield, Search, Megaphone } from 'lucide-react';
 
@@ -51,21 +52,32 @@ export function ServicesGrid() {
     <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-slide-up">
+        <Reveal className="max-w-3xl mx-auto text-center mb-16" animation="fade-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">What We Do</h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Comprehensive consultancy designed to simplify compliance and strengthen your business.
           </p>
-        </div>
+        </Reveal>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
+            <Reveal key={service.id} animation="fade-up" delayMs={index * 120}>
             <Card 
-              key={service.id}
-              className="bg-white shadow-lg card-hover animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="bg-white shadow-lg card-hover overflow-hidden"
             >
+              <div className="h-32 w-full overflow-hidden">
+                <img 
+                  src={
+                    service.id === 'consulting' ? '/images/Professional_consultancy_office_interior_f107f1d7.png' :
+                    service.id === 'training' ? '/images/Corporate_training_workshop_session_e6eb32c9.png' :
+                    service.id === 'compliance' ? '/images/Business_compliance_documentation_4dc95b57.png' :
+                    '/images/Digital_marketing_and_SEO_workspace_425d3019.png'
+                  }
+                  alt={`${service.title} visual`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader>
                 <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <service.icon className="h-7 w-7 text-primary" />
@@ -84,6 +96,7 @@ export function ServicesGrid() {
                 </Button>
               </CardContent>
             </Card>
+            </Reveal>
           ))}
         </div>
       </div>

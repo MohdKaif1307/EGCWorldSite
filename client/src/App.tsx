@@ -11,6 +11,8 @@ import RegulatoryProjects from "@/pages/regulatory-projects";
 import BrandMarketing from "@/pages/brand-marketing";
 import Insights from "@/pages/insights";
 import Contact from "@/pages/contact";
+import Privacy from "@/pages/privacy";
+import Terms from "@/pages/terms";
 
 function Router() {
   return (
@@ -22,6 +24,8 @@ function Router() {
       <Route path="/brand-marketing" component={BrandMarketing} />
       <Route path="/insights" component={Insights} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy" component={Privacy} />
+      <Route path="/terms" component={Terms} />
       {/* Fallback to 404 */}
       <Route component={NotFound} />
     </Switch>

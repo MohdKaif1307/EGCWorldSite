@@ -3,6 +3,55 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animated background helpers */
+@keyframes gradientShiftA {
+  0% { transform: translate3d(0,0,0) scale(1); filter: hue-rotate(0deg); }
+  50% { transform: translate3d(10%, -6%, 0) scale(1.15); filter: hue-rotate(45deg); }
+  100% { transform: translate3d(0,0,0) scale(1); filter: hue-rotate(0deg); }
+}
+
+@keyframes gradientShiftB {
+  0% { transform: translate3d(0,0,0) scale(1); filter: hue-rotate(0deg); }
+  50% { transform: translate3d(-8%, 6%, 0) scale(1.1); filter: hue-rotate(-30deg); }
+  100% { transform: translate3d(0,0,0) scale(1); filter: hue-rotate(0deg); }
+}
+
+@keyframes gradientShiftC {
+  0% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(6%, 8%, 0) scale(1.08); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+
+.animated-gradient {
+  background: radial-gradient(60% 60% at 50% 50%, rgba(0, 150, 255, 0.35), transparent 60%),
+              radial-gradient(40% 40% at 20% 20%, rgba(99, 102, 241, 0.35), transparent 60%),
+              radial-gradient(40% 40% at 80% 80%, rgba(16, 185, 129, 0.35), transparent 60%);
+  animation: gradientShiftA 18s ease-in-out infinite;
+}
+
+.animated-gradient-2 {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(236, 72, 153, 0.35), transparent 60%),
+              radial-gradient(40% 40% at 20% 80%, rgba(14, 165, 233, 0.35), transparent 60%);
+  animation: gradientShiftB 22s ease-in-out infinite;
+}
+
+.animated-gradient-3 {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(234, 179, 8, 0.30), transparent 60%),
+              radial-gradient(60% 60% at 70% 20%, rgba(168, 85, 247, 0.25), transparent 60%);
+  animation: gradientShiftC 26s ease-in-out infinite;
+}
+
+.bg-noise {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgYGD4DwABNQF7c9L2eQAAAABJRU5ErkJggg==");
+}
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 700ms ease, transform 700ms ease; }
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+.reveal.fade-in { transform: none; }
+.reveal.slide-left { transform: translateX(24px); }
+.reveal.slide-right { transform: translateX(-24px); }
+
 :root {
   --background: hsl(210, 40%, 98%);
   --foreground: hsl(222, 47%, 11%);

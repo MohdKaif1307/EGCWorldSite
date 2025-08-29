@@ -23,6 +23,7 @@ export default function Home() {
         title="Simplifying Compliance, Empowering Businesses"
         subtitle="From regulatory projects to corporate training and brand development — we provide end-to-end consultancy that helps your business stay future-ready."
         supportingText="Trusted by entrepreneurs, startups, and enterprises for over 10 years."
+        imageSrc="/images/Professional_consultancy_office_interior_f107f1d7.png"
       />
 
       {/* Core Services */}
@@ -146,19 +147,44 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="w-full h-96 rounded-xl overflow-hidden shadow-lg">
-                <img 
-                  src="@assets/generated_images/Business_team_collaboration_meeting_4866817a.png" 
-                  alt="Professional business team collaboration and strategy meeting at EGC World consultancy" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-                  <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-lg">
-                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle className="h-8 w-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">Trusted Partner</h3>
-                    <p className="text-muted-foreground">For 1000+ Businesses</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="col-span-2 h-56 rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/images/Business_team_collaboration_meeting_4866817a.png" 
+                    alt="Professional business team collaboration"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="h-40 rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/images/Professional_consultancy_office_interior_f107f1d7.png" 
+                    alt="Consultancy office interior"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="h-40 rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/images/Corporate_training_workshop_session_e6eb32c9.png" 
+                    alt="Corporate training workshop"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="col-span-2 h-40 rounded-xl overflow-hidden shadow-lg">
+                  <img 
+                    src="/images/Digital_marketing_and_SEO_workspace_425d3019.png" 
+                    alt="Digital marketing and SEO workspace"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 bg-background/80 backdrop-blur-md border border-border rounded-lg p-4 shadow-lg">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <CheckCircle className="h-6 w-6 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground">Trusted by</div>
+                    <div className="text-foreground font-semibold">1000+ Businesses</div>
                   </div>
                 </div>
               </div>

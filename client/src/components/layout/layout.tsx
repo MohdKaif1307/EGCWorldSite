@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from './header';
 import { Footer } from './footer';
 import { ScrollToTop } from '@/components/ui/scroll-to-top';
+import { BackgroundEffect } from '@/components/ui/background';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,7 +10,8 @@ interface LayoutProps {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <BackgroundEffect />
       <Header />
       <main className="flex-1 pt-20">
         {children}

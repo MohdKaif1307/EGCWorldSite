@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Reveal } from '@/components/ui/reveal';
 import { User } from 'lucide-react';
 
 const testimonials = [
@@ -21,14 +22,16 @@ export function Testimonials() {
   return (
     <section className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <Reveal className="max-w-3xl mx-auto text-center mb-16" animation="fade-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">What Our Clients Say</h2>
           <p className="text-xl text-muted-foreground">Hear from the businesses we've helped grow and succeed.</p>
-        </div>
+        </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-white shadow-lg">
+            <Reveal key={index} animation="fade-up" delayMs={index * 120}>
+            <Card className="bg-white shadow-lg overflow-hidden">
+              <div className={`h-20 w-full ${index % 2 ? 'bg-accent/10' : 'bg-primary/10'}`} />
               <CardContent className="p-8">
                 <div className="flex items-start space-x-4">
                   <div className={`w-12 h-12 ${testimonial.color} rounded-full flex items-center justify-center flex-shrink-0`}>
@@ -46,6 +49,7 @@ export function Testimonials() {
                 </div>
               </CardContent>
             </Card>
+            </Reveal>
           ))}
         </div>
       </div>

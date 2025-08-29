@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/layout';
 import { SEO } from '@/lib/seo';
 import { Hero } from '@/components/sections/hero';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Reveal } from '@/components/ui/reveal';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
@@ -127,6 +128,7 @@ export default function Services() {
         subtitle="From compliance to brand growth, our services are designed to simplify challenges and unlock new opportunities for businesses of all sizes."
         primaryCTA="Talk to Our Experts"
         variant="page"
+        imageSrc="/images/Business_team_collaboration_meeting_4866817a.png"
       />
 
       {/* Services Section */}
@@ -138,7 +140,7 @@ export default function Services() {
                 <div className={`grid lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}>
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                  <Reveal className={index % 2 === 1 ? 'lg:order-2' : ''} animation="fade-up" delayMs={60}>
                     <div className="flex items-center mb-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
                         <service.icon className="h-8 w-8 text-primary" />
@@ -175,17 +177,17 @@ export default function Services() {
                     >
                       {service.cta}
                     </Button>
-                  </div>
+                  </Reveal>
 
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                  <Reveal className={index % 2 === 1 ? 'lg:order-1' : ''} animation="slide-left" delayMs={120}>
                     <Card className="shadow-lg overflow-hidden">
                       <div className="w-full h-64 relative">
                         <img 
                           src={
-                            service.id === 'consulting' ? '@assets/generated_images/Professional_consultancy_office_interior_f107f1d7.png' :
-                            service.id === 'training' ? '@assets/generated_images/Corporate_training_workshop_session_e6eb32c9.png' :
-                            service.id === 'compliance' ? '@assets/generated_images/Business_compliance_documentation_4dc95b57.png' :
-                            '@assets/generated_images/Digital_marketing_and_SEO_workspace_425d3019.png'
+                            service.id === 'consulting' ? '/images/Professional_consultancy_office_interior_f107f1d7.png' :
+                            service.id === 'training' ? '/images/Corporate_training_workshop_session_e6eb32c9.png' :
+                            service.id === 'compliance' ? '/images/Business_compliance_documentation_4dc95b57.png' :
+                            '/images/Digital_marketing_and_SEO_workspace_425d3019.png'
                           }
                           alt={`${service.title} - Professional business consulting services by EGC World`}
                           className="w-full h-full object-cover"
@@ -197,7 +199,7 @@ export default function Services() {
                         </div>
                       </div>
                     </Card>
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             ))}

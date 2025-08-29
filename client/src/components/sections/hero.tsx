@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Phone, Search, Star } from 'lucide-react';
+import { Reveal } from '@/components/ui/reveal';
 
 interface HeroProps {
   title: string;
@@ -10,6 +11,7 @@ interface HeroProps {
   secondaryCTA?: string;
   supportingText?: string;
   variant?: 'default' | 'page';
+  imageSrc?: string;
 }
 
 export function Hero({ 
@@ -18,14 +20,16 @@ export function Hero({
   primaryCTA = "Talk to Our Experts",
   secondaryCTA = "Explore Services",
   supportingText,
-  variant = 'default'
+  variant = 'default',
+  imageSrc,
 }: HeroProps) {
   const isDefault = variant === 'default';
   
   return (
     <section className={`${isDefault ? 'hero-gradient' : 'bg-muted'} py-16 lg:py-24`}>
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+          <Reveal animation="fade-up">
           <h1 className={`text-4xl lg:text-6xl font-bold mb-6 ${
             isDefault ? 'text-primary-foreground' : 'text-foreground'
           }`}>
@@ -75,6 +79,16 @@ export function Hero({
               <Star className="inline w-5 h-5 text-yellow-400 mr-2" />
               {supportingText}
             </p>
+          )}
+          </Reveal>
+
+          {imageSrc && (
+            <Reveal animation="slide-left">
+              <div className="relative h-64 lg:h-80 rounded-xl overflow-hidden shadow-2xl border border-white/10">
+                <img src={imageSrc} alt="Hero visual" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" />
+              </div>
+            </Reveal>
           )}
         </div>
       </div>

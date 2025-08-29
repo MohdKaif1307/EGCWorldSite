@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Target, Eye, Heart, Lightbulb, Users, Award, CheckCircle } from 'lucide-react';
+import { Reveal } from '@/components/ui/reveal';
 
 export default function About() {
   const values = [
@@ -58,12 +59,13 @@ export default function About() {
         subtitle="Empowering businesses through compliance, consultancy, and brand growth for over a decade."
         primaryCTA="Meet Our Team"
         variant="page"
+        imageSrc="/images/Business_compliance_documentation_4dc95b57.png"
       />
 
       {/* Our Story */}
       <section className="py-16 lg:py-24 bg-background">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+          <Reveal className="max-w-4xl mx-auto" animation="fade-up">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
               <p className="text-lg mb-6">
@@ -76,7 +78,7 @@ export default function About() {
                 Today, we are more than just consultants — we are strategic partners committed to building sustainable, future-ready organizations.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -85,7 +87,8 @@ export default function About() {
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 mb-16">
             {/* Mission */}
-            <Card className="shadow-lg">
+            <Reveal animation="fade-up" delayMs={60}><Card className="shadow-lg overflow-hidden">
+              <div className="h-24 bg-gradient-to-r from-primary/10 to-transparent" />
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="h-8 w-8 text-primary" />
@@ -95,10 +98,11 @@ export default function About() {
                   To provide end-to-end consultancy solutions that empower businesses to achieve compliance, enhance capabilities, and grow with confidence.
                 </p>
               </CardContent>
-            </Card>
+            </Card></Reveal>
 
             {/* Vision */}
-            <Card className="shadow-lg">
+            <Reveal animation="fade-up" delayMs={120}><Card className="shadow-lg overflow-hidden">
+              <div className="h-24 bg-gradient-to-r from-accent/10 to-transparent" />
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Eye className="h-8 w-8 text-accent" />
@@ -108,10 +112,11 @@ export default function About() {
                   To be recognized as a leading consultancy firm in India known for excellence in regulatory projects, compliance solutions, and brand development.
                 </p>
               </CardContent>
-            </Card>
+            </Card></Reveal>
 
             {/* Impact */}
-            <Card className="shadow-lg">
+            <Reveal animation="fade-up" delayMs={180}><Card className="shadow-lg overflow-hidden">
+              <div className="h-24 bg-gradient-to-r from-green-100 to-transparent" />
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CheckCircle className="h-8 w-8 text-green-600" />
@@ -121,7 +126,7 @@ export default function About() {
                   We aim to create meaningful contributions for businesses and society through our consultancy services and regulatory initiatives.
                 </p>
               </CardContent>
-            </Card>
+            </Card></Reveal>
           </div>
 
           {/* Core Values */}

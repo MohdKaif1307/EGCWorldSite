@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Global Consultancies - Simplifying Compliance, Empowering Businesses</title>
+    <meta name="description" content="Comprehensive consultancy services including compliance, corporate training, brand development, and regulatory project implementation. Trusted by 1000+ businesses.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          borderRadius: {
+            lg: "var(--radius)",
+            md: "calc(var(--radius) - 2px)",
+            sm: "calc(var(--radius) - 4px)",
+          },
+          colors: {
+            background: "var(--background)",
+            foreground: "var(--foreground)",
+            primary: {
+              DEFAULT: "var(--primary)",
+              foreground: "var(--primary-foreground)",
+            },
+            secondary: {
+              DEFAULT: "var(--secondary)",
+              foreground: "var(--secondary-foreground)",
+            },
+            muted: {
+              DEFAULT: "var(--muted)",
+              foreground: "var(--muted-foreground)",
+            },
+            accent: {
+              DEFAULT: "var(--accent)",
+              foreground: "var(--accent-foreground)",
+            },
+            border: "var(--border)",
+            input: "var(--input)",
+            ring: "var(--ring)",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          }
+        },
+      }
+    };
+    </script>
+    
+    <style>
+        :root {
+            --background: hsl(210 40% 98%);
+            --foreground: hsl(222 47% 11%);
+            --primary: hsl(224 71% 36%);
+            --primary-foreground: hsl(210 40% 98%);
+            --secondary: hsl(215 16% 47%);
+            --secondary-foreground: hsl(222 47% 11%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215 13% 40%);
+            --accent: hsl(217 91% 60%);
+            --accent-foreground: hsl(210 40% 98%);
+            --border: hsl(214 32% 91%);
+            --input: hsl(214 32% 91%);
+            --ring: hsl(224 71% 36%);
+            --radius: 0.5rem;
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        .animate-slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-active {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid hsl(var(--border));
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground font-sans">
+
+    <!-- Navigation Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe-americas text-primary-foreground text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-foreground">EGC World</h1>
+                        <p class="text-xs text-muted-foreground">Global Consultancies</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-foreground hover:text-primary transition-colors duration-200">Home</a>
+                    <a href="#about" class="text-foreground hover:text-primary transition-colors duration-200">About Us</a>
+                    
+                    <!-- Services Dropdown -->
+                    <div class="relative dropdown">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 flex items-center">
+                            Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg py-2">
+                            <a href="#consulting" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Business & Management Consulting</a>
+                            <a href="#training" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Learning & Development</a>
+                            <a href="#compliance" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Corporate Compliance</a>
+                            <a href="#seo" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">SEO Optimization</a>
+                            <a href="#marketing" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Brand Marketing</a>
+                        </div>
+                    </div>
+
+                    <!-- Projects Dropdown -->
+                    <div class="relative dropdown">
+                        <button class="text-foreground hover:text-primary transition-colors duration-200 flex items-center">
+                            Projects <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="dropdown-menu absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-lg py-2">
+                            <a href="#eat-right" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Eat Right India Initiative</a>
+                            <a href="#legal-metrology" class="block px-4 py-2 text-sm text-foreground hover:bg-muted transition-colors">Legal Metrology Affairs</a>
+                        </div>
+                    </div>
+
+                    <a href="#insights" class="text-foreground hover:text-primary transition-colors duration-200">Insights</a>
+                    <a href="#contact" class="text-foreground hover:text-primary transition-colors duration-200">Contact</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <button class="bg-primary text-primary-foreground px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200">
+                        Talk to Our Experts
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-foreground">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-24 pb-16 lg:pt-32 lg:pb-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center animate-fade-in">
+                <h1 class="text-4xl lg:text-6xl font-bold text-primary-foreground mb-6">
+                    Simplifying Compliance, Empowering Businesses
+                </h1>
+                <p class="text-xl lg:text-2xl text-primary-foreground/90 mb-8 leading-relaxed">
+                    From regulatory projects to corporate training and brand development — we provide end-to-end consultancy that helps your business stay future-ready.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                    <button class="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-phone-alt mr-2"></i>
+                        Talk to Our Experts
+                    </button>
+                    <button class="bg-transparent border-2 border-primary-foreground text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary-foreground hover:text-primary transition-all duration-200">
+                        <i class="fas fa-search mr-2"></i>
+                        Explore Services
+                    </button>
+                </div>
+
+                <p class="text-primary-foreground/80 text-lg">
+                    <i class="fas fa-star text-yellow-400 mr-2"></i>
+                    Trusted by entrepreneurs, startups, and enterprises for over 10 years.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="services" class="py-16 lg:py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <!-- Section Header -->
+            <div class="max-w-3xl mx-auto text-center mb-16 animate-slide-up">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">What We Do</h2>
+                <p class="text-xl text-muted-foreground leading-relaxed">
+                    Comprehensive consultancy designed to simplify compliance and strengthen your business.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Business & Management Consulting -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 animate-fade-in">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-foreground mb-4">Business & Management Consulting</h3>
+                    <p class="text-muted-foreground mb-6 leading-relaxed">
+                        Expert guidance to streamline operations, compliance, and growth strategies.
+                    </p>
+                    <button class="bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors duration-200">
+                        Explore Consulting
+                    </button>
+                </div>
+
+                <!-- Learning & Development -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 animate-fade-in">
+                    <div class="w-14 h-14 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-2xl text-accent"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-foreground mb-4">Learning & Development Programs</h3>
+                    <p class="text-muted-foreground mb-6 leading-relaxed">
+                        Customized workshops and corporate training designed to build skills and performance.
+                    </p>
+                    <button class="bg-accent text-accent-foreground px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors duration-200">
+                        View Programs
+                    </button>
+                </div>
+
+                <!-- Corporate Compliance -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 animate-fade-in">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-foreground mb-4">Corporate Compliance Solutions</h3>
+                    <p class="text-muted-foreground mb-6 leading-relaxed">
+                        Ensure your business stays aligned with government regulations and industry standards.
+                    </p>
+                    <button class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200">
+                        Get Compliance Support
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regulatory Projects Section -->
+    <section id="regulatory" class="py-16 lg:py-24 bg-muted">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                    Driving Change Through Regulatory Projects
+                </h2>
+                <p class="text-xl text-muted-foreground leading-relaxed">
+                    We actively participate in government-backed and industry-driven initiatives to promote compliance and awareness.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Eat Right India -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Modern food safety and nutrition consultation image -->
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Healthy food and nutrition consultation" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-foreground mb-4">
+                            <i class="fas fa-leaf text-green-500 mr-3"></i>
+                            Eat Right India Initiative
+                        </h3>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Supporting India's vision for safe, healthy, and sustainable food practices.
+                        </p>
+                        <button class="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+                            Learn More <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Legal Metrology -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <!-- Professional legal consulting and compliance image -->
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400" alt="Legal compliance and metrology consultation" class="w-full h-48 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-foreground mb-4">
+                            <i class="fas fa-balance-scale text-blue-500 mr-3"></i>
+                            Legal Metrology Affairs
+                        </h3>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Advisory and compliance support for weights, measures, and labeling regulations.
+                        </p>
+                        <button class="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+                            Get Support <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand & Marketing Section -->
+    <section id="marketing" class="py-16 lg:py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+                    Grow Your Brand, Expand Your Reach
+                </h2>
+                <p class="text-xl text-muted-foreground leading-relaxed">
+                    Helping your business connect with customers and stand out in a competitive market.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- SEO Services -->
+                <div class="flex items-center space-x-8">
+                    <div class="flex-1">
+                        <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-search text-3xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-foreground mb-4">SEO Optimization Services</h3>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            Boost your online presence with data-driven SEO strategies to rank higher on search engines.
+                        </p>
+                        <button class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors duration-200">
+                            Boost My SEO
+                        </button>
+                    </div>
+                    <div class="hidden lg:block">
+                        <!-- Digital marketing and SEO analytics dashboard -->
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&h=400" alt="SEO analytics and digital marketing dashboard" class="rounded-xl shadow-lg">
+                    </div>
+                </div>
+
+                <!-- Marketing Services -->
+                <div class="flex items-center space-x-8">
+                    <div class="hidden lg:block">
+                        <!-- Brand marketing and social media strategy -->
+                        <img src="https://pixabay.com/get/g2806eb456426743ee45e3be1a3e60683d7ce8a35564f9f689d53759299af69e84a0e86658329c60c88dc8e9b1d29233ac46a52966c7f8666bb9067ccb8e8ca6a_1280.jpg" alt="Brand marketing strategy and social media campaign" class="rounded-xl shadow-lg">
+                    </div>
+                    <div class="flex-1">
+                        <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-bullhorn text-3xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-foreground mb-4">Marketing for Your Brand</h3>
+                        <p class="text-muted-foreground mb-6 leading-relaxed">
+                            End-to-end brand promotion and digital marketing solutions to grow visibility and reach.
+                        </p>
+                        <button class="bg-orange-600 text-white px-6 py-3 rounded-lg hover:bg-orange-700 transition-colors duration-200">
+                            Grow My Brand
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 lg:py-24 bg-muted">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                        Why Choose Emmanuel Global Consultancies?
+                    </h2>
+                    <p class="text-lg text-muted-foreground mb-8 leading-relaxed">
+                        At EGC World, we specialize in regulatory project implementation, corporate consultancy, training, and brand development. With over a decade of expertise, we help businesses simplify compliance, achieve growth, and stay future-ready.
+                    </p>
+
+                    <!-- Achievement Stats -->
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">10+</div>
+                            <p class="text-muted-foreground">Years of Experience</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary mb-2">1000+</div>
+                            <p class="text-muted-foreground">Projects Delivered</p>
+                        </div>
+                    </div>
+
+                    <!-- Key Points -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="text-foreground">10+ Years of Consultancy Experience</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="text-foreground">1000+ Projects Delivered Successfully</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="text-foreground">Dedicated Experts for Every Client</span>
+                        </div>
+                    </div>
+
+                    <button class="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                        Know More About Us
+                    </button>
+                </div>
+
+                <div class="relative">
+                    <!-- Professional business team meeting and consultancy -->
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500" alt="Professional business consultancy team meeting" class="rounded-xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-6 max-w-xs">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-foreground">Trusted Partner</p>
+                                <p class="text-sm text-muted-foreground">For 1000+ Businesses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 lg:py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-muted-foreground">Hear from the businesses we've helped grow and succeed.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted-foreground mb-4 italic leading-relaxed">
+                                "EGC World made our compliance journey smooth and stress-free. Excellent guidance throughout."
+                            </p>
+                            <div>
+                                <p class="font-semibold text-foreground">Ramesh Gupta</p>
+                                <p class="text-sm text-muted-foreground">Food Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user text-accent"></i>
+                        </div>
+                        <div>
+                            <p class="text-muted-foreground mb-4 italic leading-relaxed">
+                                "They supported us with compliance and brand promotion — a one-stop solution!"
+                            </p>
+                            <div>
+                                <p class="font-semibold text-foreground">Neha Sharma</p>
+                                <p class="text-sm text-muted-foreground">Startup Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights & Blog Section -->
+    <section id="insights" class="py-16 lg:py-24 bg-muted">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Insights & Resources</h2>
+                <p class="text-xl text-muted-foreground leading-relaxed">
+                    Stay updated with the latest in compliance, corporate training, and business growth.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <!-- Business compliance and regulatory guidance -->
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Business compliance and regulatory guidance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-primary font-semibold mb-2">COMPLIANCE</div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">5 Essential Compliance Steps Every Business Must Follow</h3>
+                        <p class="text-muted-foreground mb-4 line-clamp-3">
+                            Learn the fundamental compliance requirements that can save your business from costly penalties...
+                        </p>
+                        <button class="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <!-- Corporate training and team development -->
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Corporate training and team development session" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-accent font-semibold mb-2">TRAINING</div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">How Corporate Training Drives Business Growth</h3>
+                        <p class="text-muted-foreground mb-4 line-clamp-3">
+                            Discover how strategic employee training programs can transform your business performance...
+                        </p>
+                        <button class="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <!-- Digital marketing and SEO strategy -->
+                    <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=250" alt="Digital marketing strategy and SEO optimization" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-green-600 font-semibold mb-2">MARKETING</div>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Digital Marketing Trends for 2025</h3>
+                        <p class="text-muted-foreground mb-4 line-clamp-3">
+                            Stay ahead with the latest digital marketing strategies that will dominate in 2025...
+                        </p>
+                        <button class="text-primary font-semibold hover:text-primary/80 transition-colors duration-200">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-background">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Connect With Us</h2>
+                <p class="text-xl text-muted-foreground leading-relaxed">
+                    Fill in your details and our team will connect with you within 24 hours.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-lg p-8" data-mock="true" data-implementation="Integrate with Formspree or EmailJS">
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Full Name *</label>
+                            <input type="text" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your full name">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Email / Phone *</label>
+                            <input type="text" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your email or phone number">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Service Needed</label>
+                            <select class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option>Select a service</option>
+                                <option>Consulting</option>
+                                <option>Training</option>
+                                <option>Compliance</option>
+                                <option>Marketing</option>
+                                <option>Projects</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your requirements"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-primary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Request a Callback
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Phone -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-phone text-primary"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground mb-1">Phone</h3>
+                            <p class="text-muted-foreground">+91 85272 73997</p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground mb-1">Email</h3>
+                            <p class="text-muted-foreground">support@egcworld.in</p>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-foreground mb-1">Office Address</h3>
+                            <p class="text-muted-foreground leading-relaxed">
+                                614, 6th Floor, Eros City Square Mall,<br>
+                                Rose Wood City, Gurugram,<br>
+                                Haryana, 122018
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Business Hours -->
+                    <div class="bg-muted rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-foreground mb-4">Business Hours</h3>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-muted-foreground">Monday - Friday</span>
+                                <span class="text-foreground font-medium">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted-foreground">Saturday</span>
+                                <span class="text-foreground font-medium">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted-foreground">Sunday</span>
+                                <span class="text-foreground font-medium">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-primary-foreground py-12 lg:py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                            <i class="fas fa-globe-americas text-primary-foreground text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">EGC World</h3>
+                            <p class="text-sm text-primary-foreground/80">Emmanuel Global Consultancies</p>
+                        </div>
+                    </div>
+                    <p class="text-primary-foreground/80 mb-6 leading-relaxed">
+                        Simplifying compliance, empowering businesses. With over 10 years of expertise in consultancy, training, and regulatory project implementation.
+                    </p>
+                    
+                    <!-- Social Media -->
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors duration-200">
+                            <i class="fab fa-linkedin text-primary-foreground"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors duration-200">
+                            <i class="fab fa-facebook text-primary-foreground"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors duration-200">
+                            <i class="fab fa-instagram text-primary-foreground"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center hover:bg-primary/30 transition-colors duration-200">
+                            <i class="fab fa-youtube text-primary-foreground"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <div class="space-y-3">
+                        <a href="#home" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Home</a>
+                        <a href="#about" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">About Us</a>
+                        <a href="#services" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Services</a>
+                        <a href="#regulatory" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Regulatory Projects</a>
+                        <a href="#insights" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Insights</a>
+                        <a href="#contact" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+                    <div class="space-y-3">
+                        <a href="#consulting" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Business Consulting</a>
+                        <a href="#training" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Learning & Development</a>
+                        <a href="#compliance" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Corporate Compliance</a>
+                        <a href="#seo" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">SEO Optimization</a>
+                        <a href="#marketing" class="block text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Brand Marketing</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-primary-foreground/20 mt-12 pt-8">
+                <div class="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
+                    <p class="text-primary-foreground/80 text-sm">
+                        © 2025 Emmanuel Global Consultancies. All Rights Reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Privacy Policy</a>
+                        <a href="#" class="text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-200">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-primary-foreground rounded-full shadow-lg hover:bg-primary/90 transition-all duration-200 opacity-0 invisible">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Sticky Navigation
+        (function() {
+            const navbar = document.getElementById('navbar');
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('nav-active');
+                    scrollToTopBtn.style.opacity = '1';
+                    scrollToTopBtn.style.visibility = 'visible';
+                } else {
+                    navbar.classList.remove('nav-active');
+                    scrollToTopBtn.style.opacity = '0';
+                    scrollToTopBtn.style.visibility = 'hidden';
+                }
+            });
+
+            // Scroll to top functionality
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // TODO: Implement form handling with Formspree or EmailJS
+        // TODO: Add proper form validation and error handling
+        // TODO: Implement analytics tracking for user interactions
+        // TODO: Add proper mobile menu toggle functionality
+    </script>
+</body>
+</html>

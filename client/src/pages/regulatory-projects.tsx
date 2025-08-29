@@ -2,6 +2,7 @@ import React from 'react';
 import { Layout } from '@/components/layout/layout';
 import { SEO } from '@/lib/seo';
 import { Hero } from '@/components/sections/hero';
+import { Reveal } from '@/components/ui/reveal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -84,6 +85,7 @@ export default function RegulatoryProjects() {
         subtitle="We actively participate in projects that create awareness, strengthen compliance, and support India's vision for a healthier, fairer marketplace."
         primaryCTA="Talk to Our Experts"
         variant="page"
+        imageSrc="/images/Business_compliance_documentation_4dc95b57.png"
       />
 
       {/* Our Regulatory Projects */}
@@ -95,7 +97,7 @@ export default function RegulatoryProjects() {
                 <div className={`grid lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                 }`}>
-                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
+                  <Reveal className={index % 2 === 1 ? 'lg:order-2' : ''} animation="fade-up" delayMs={60}>
                     <div className="flex items-center mb-6">
                       <div className={`w-16 h-16 ${project.bgColor} rounded-xl flex items-center justify-center mr-4`}>
                         <project.icon className={`h-8 w-8 ${project.color}`} />
@@ -134,12 +136,16 @@ export default function RegulatoryProjects() {
                     >
                       {project.cta}
                     </Button>
-                  </div>
+                  </Reveal>
 
-                  <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
+                  <Reveal className={index % 2 === 1 ? 'lg:order-1' : ''} animation="slide-left" delayMs={120}>
                     <Card className="shadow-lg overflow-hidden">
-                      <div className={`h-64 ${project.bgColor} flex items-center justify-center`}>
-                        <project.icon className={`h-32 w-32 ${project.color}`} />
+                      <div className="h-64 w-full">
+                        <img 
+                          src={project.id === 'eat-right' ? '/images/Business_team_collaboration_meeting_4866817a.png' : '/images/Business_compliance_documentation_4dc95b57.png'}
+                          alt={`${project.title} visual`}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <CardContent className="p-6">
                         <div className="flex items-center justify-center space-x-4">
@@ -164,7 +170,7 @@ export default function RegulatoryProjects() {
                         </div>
                       </CardContent>
                     </Card>
-                  </div>
+                  </Reveal>
                 </div>
               </div>
             ))}
