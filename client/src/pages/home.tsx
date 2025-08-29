@@ -146,13 +146,20 @@ export default function Home() {
             </div>
 
             <div className="relative">
-              <div className="w-full h-96 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-12 w-12 text-primary-foreground" />
+              <div className="w-full h-96 rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="@assets/generated_images/Business_team_collaboration_meeting_4866817a.png" 
+                  alt="Professional business team collaboration and strategy meeting at EGC World consultancy" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
+                  <div className="text-center bg-white/90 backdrop-blur-sm p-6 rounded-lg">
+                    <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle className="h-8 w-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">Trusted Partner</h3>
+                    <p className="text-muted-foreground">For 1000+ Businesses</p>
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-2">Trusted Partner</h3>
-                  <p className="text-muted-foreground">For 1000+ Businesses</p>
                 </div>
               </div>
             </div>

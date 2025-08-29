@@ -63,7 +63,7 @@ export function ServicesGrid() {
           {services.map((service, index) => (
             <Card 
               key={service.id}
-              className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in"
+              className="bg-white shadow-lg card-hover animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
@@ -77,7 +77,7 @@ export function ServicesGrid() {
                   {service.description}
                 </p>
                 <Button 
-                  className={service.color}
+                  className={`${service.color} btn-primary`}
                   data-testid={`button-${service.id}`}
                 >
                   {service.cta}

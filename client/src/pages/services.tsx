@@ -178,12 +178,24 @@ export default function Services() {
                   </div>
 
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <Card className="shadow-lg">
-                      <CardContent className="p-8">
-                        <div className="w-full h-64 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                          <service.icon className="h-24 w-24 text-primary" />
+                    <Card className="shadow-lg overflow-hidden">
+                      <div className="w-full h-64 relative">
+                        <img 
+                          src={
+                            service.id === 'consulting' ? '@assets/generated_images/Professional_consultancy_office_interior_f107f1d7.png' :
+                            service.id === 'training' ? '@assets/generated_images/Corporate_training_workshop_session_e6eb32c9.png' :
+                            service.id === 'compliance' ? '@assets/generated_images/Business_compliance_documentation_4dc95b57.png' :
+                            '@assets/generated_images/Digital_marketing_and_SEO_workspace_425d3019.png'
+                          }
+                          alt={`${service.title} - Professional business consulting services by EGC World`}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-primary/30 flex items-center justify-center">
+                          <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                            <service.icon className="h-10 w-10 text-white" />
+                          </div>
                         </div>
-                      </CardContent>
+                      </div>
                     </Card>
                   </div>
                 </div>
