@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Reveal } from '@/components/ui/reveal';
 import { Button } from '@/components/ui/button';
+import { Link } from 'wouter';
 import { TrendingUp, GraduationCap, Shield, Search, Megaphone } from 'lucide-react';
 
 const services = [
@@ -88,12 +89,14 @@ export function ServicesGrid() {
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <Button 
-                  className={`${service.color} btn-primary`}
-                  data-testid={`button-${service.id}`}
-                >
-                  {service.cta}
-                </Button>
+                <Link href={`/services#${service.id}`}>
+                  <Button 
+                    className={`${service.color} btn-primary`}
+                    data-testid={`button-${service.id}`}
+                  >
+                    {service.cta}
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
             </Reveal>

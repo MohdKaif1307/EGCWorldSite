@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Reveal } from '@/components/ui/reveal';
+import { SectionBg } from '@/components/ui/section-bg';
 import { User } from 'lucide-react';
 
 const testimonials = [
@@ -20,7 +21,8 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-16 lg:py-24 bg-background">
+    <section className="py-16 lg:py-24 bg-background relative">
+      <SectionBg imageSrc="/images/Professional_consultancy_office_interior_f107f1d7.png" opacity={0.30} />
       <div className="container mx-auto px-6">
         <Reveal className="max-w-3xl mx-auto text-center mb-16" animation="fade-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">What Our Clients Say</h2>

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Target, Eye, Heart, Lightbulb, Users, Award, CheckCircle } from 'lucide-react';
 import { Reveal } from '@/components/ui/reveal';
+import { SectionBg } from '@/components/ui/section-bg';
 
 export default function About() {
   const values = [
@@ -63,7 +64,8 @@ export default function About() {
       />
 
       {/* Our Story */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background relative">
+        <SectionBg imageSrc="/images/Professional_consultancy_office_interior_f107f1d7.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <Reveal className="max-w-4xl mx-auto" animation="fade-up">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8 text-center">Our Story</h2>
@@ -83,7 +85,8 @@ export default function About() {
       </section>
 
       {/* Mission, Vision & Values */}
-      <section className="py-16 lg:py-24 bg-muted">
+      <section className="py-16 lg:py-24 bg-muted relative">
+        <SectionBg imageSrc="/images/Business_compliance_documentation_4dc95b57.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-3 gap-12 mb-16">
             {/* Mission */}
@@ -150,7 +153,8 @@ export default function About() {
       </section>
 
       {/* Our Team */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background relative">
+        <SectionBg imageSrc="/images/Business_team_collaboration_meeting_4866817a.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">Our Team</h2>
@@ -190,7 +194,8 @@ export default function About() {
       </section>
 
       {/* Our Achievements */}
-      <section className="py-16 lg:py-24 bg-muted">
+      <section className="py-16 lg:py-24 bg-muted relative">
+        <SectionBg imageSrc="/images/Digital_marketing_and_SEO_workspace_425d3019.png" opacity={0.30} />
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">Our Achievements</h2>
@@ -250,7 +255,8 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-primary">
+      <section className="py-16 lg:py-24 bg-primary relative">
+        <SectionBg imageSrc="/images/Corporate_training_workshop_session_e6eb32c9.png" opacity={0.25} />
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
             At EGC World, we don't just provide consultancy — we build partnerships that last.

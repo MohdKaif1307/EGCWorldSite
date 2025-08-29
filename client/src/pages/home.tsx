@@ -8,6 +8,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
 import { Leaf, Scale, CheckCircle, ArrowRight } from 'lucide-react';
+import { SectionBg } from '@/components/ui/section-bg';
 
 export default function Home() {
   return (
@@ -30,7 +31,8 @@ export default function Home() {
       <ServicesGrid />
 
       {/* Regulatory Projects Section */}
-      <section className="py-16 lg:py-24 bg-muted">
+      <section className="py-16 lg:py-24 bg-muted relative">
+        <SectionBg imageSrc="/images/Business_compliance_documentation_4dc95b57.png" opacity={0.45} />
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -96,7 +98,8 @@ export default function Home() {
       </section>
 
       {/* About Us Section */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background relative">
+        <SectionBg imageSrc="/images/Professional_consultancy_office_interior_f107f1d7.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>

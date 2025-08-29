@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
 import { Leaf, Scale, CheckCircle, Users, Award, Globe } from 'lucide-react';
+import { SectionBg } from '@/components/ui/section-bg';
 
 export default function RegulatoryProjects() {
   const projects = [
@@ -89,7 +90,8 @@ export default function RegulatoryProjects() {
       />
 
       {/* Our Regulatory Projects */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background relative">
+        <SectionBg imageSrc="/images/Business_compliance_documentation_4dc95b57.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <div className="space-y-20">
             {projects.map((project, index) => (
@@ -179,7 +181,8 @@ export default function RegulatoryProjects() {
       </section>
 
       {/* Why Regulatory Projects Matter */}
-      <section className="py-16 lg:py-24 bg-muted">
+      <section className="py-16 lg:py-24 bg-muted relative">
+        <SectionBg imageSrc="/images/Business_team_collaboration_meeting_4866817a.png" opacity={0.35} />
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12">
@@ -208,7 +211,8 @@ export default function RegulatoryProjects() {
       </section>
 
       {/* FAQs */}
-      <section className="py-16 lg:py-24 bg-background">
+      <section className="py-16 lg:py-24 bg-background relative">
+        <SectionBg imageSrc="/images/Professional_consultancy_office_interior_f107f1d7.png" opacity={0.30} />
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-12 text-center">
@@ -236,7 +240,8 @@ export default function RegulatoryProjects() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-primary">
+      <section className="py-16 lg:py-24 bg-primary relative">
+        <SectionBg imageSrc="/images/Digital_marketing_and_SEO_workspace_425d3019.png" opacity={0.25} />
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
             Be a part of initiatives that shape a safer, healthier, and more compliant India.
