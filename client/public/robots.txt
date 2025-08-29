@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://egcworld.in/sitemap.xml
+
+# Crawl-delay for all robots
+Crawl-delay: 1
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.env
+Disallow: /api/
+
+# Allow access to all other content
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /regulatory-projects
+Allow: /brand-marketing
+Allow: /insights
+Allow: /contact
